@@ -50,8 +50,7 @@ A set of rules that bitcoin nodes agree upon and enforce when considering the va
 			2.  $nLockTime \lt blockheight_{threshold} || blocktime_{threshold}$ (or)
 			3. $nSequence = ffffffff$ , irrespective of the above two conditions
 	2. The first item of the ScriptSig of a coinbase transaction in a block must be the block's height. 
-	
-![[Pasted image 20240705125857.png]]
+![](images/Pasted%20image%2020240705125857.png)
 			The `CheckTransaction()` function of bitcoin core
 # References
 
