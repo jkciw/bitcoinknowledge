@@ -26,9 +26,9 @@ It is a cryptographic message authentication code (MAC) used to simultaneously v
 In sum, *HMAC-SHA512 is a function that takes messages of arbitrary length and always produces a 64 byte (or) 512 bits output.*[^4] 
 
 The definition of HMAC is as follows[^3]
-$ \text{HMAC} (K,D)= H\bigg((K'\oplus opad)\parallel H((K'\oplus ipad)\parallel D)\bigg) $
+$\text{HMAC} (K,D)= H\bigg((K'\oplus opad)\parallel H((K'\oplus ipad)\parallel D)\bigg)$
 where
-$'\begin {align*} 
+$$\begin {align*} 
 	& K \text{ - Key/Secret}\\
 	& D \text{ - Data}\\
 	& H \text{ - is the hash function. BIP32 uses SHA-512}\\
@@ -40,7 +40,7 @@ $'\begin {align*}
 	& \text{opad} \text{ - 128 bytes of 0x5c - outer padding}\\
 	& \text{ipad} \text{- 128 bytes of 0x36 - inner paddind}\\
 	& \text{HMAC}(K,D) \text{ - 64bytes code}\\
-\end{align*}'$
+\end{align*}$$
 
 #### Chain Code
 In order to add security to the child key derivation process and to add entropy[^1] to the process, *chaincode* is used. The right 32-byte of the HMAC-SHA512 output of the parent is called the *chaincode*. It is used as the key/secret in the HMAC-SHA512 process. 
