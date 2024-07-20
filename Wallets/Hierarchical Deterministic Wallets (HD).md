@@ -1,4 +1,5 @@
 #hdwallet
+<br>
 HD wallets are applications that generate all of its keys and addresses from a single source. 
 - Hierarchical - The keys and addresses derived from them can be organized in to a tree
 - Deterministic - The keys and addresses can always be derived, from the seed, in the same way. 
@@ -49,12 +50,8 @@ Without chaincode, it would be trivial to calculate child public keys, given the
 #### Key derivation process[^1]
 An overview of the steps involved in the key generation process is shown below
 ![](images/HDwallletprocess.jpg)
-##### Mnemonic Generation 
-
-![](images/mnemonic_generation%201.jpg)
-##### Deriving the Seed from mnemonic phrases
-
-![](images/mnemonictoseed.jpg)
+##### Mnemonic Generation and Seed Generation
+The process of generating mnemonic phrases from entropy and converting the phrases into a seed is detailed in the note about [Mnemonic Seeds](Mnemonic%20Seeds.md)
 ##### Deriving the Master Private/Public Key from the Seed
 
 ![](images/private_masterkey.jpg)

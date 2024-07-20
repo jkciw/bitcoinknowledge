@@ -22,7 +22,7 @@ BIPs purpose and guidelines regarding the BIP are detailed in BIP 1[^1].
 Not all new features related to improvement of bitcoin needs to go through the BIP process. BIPs are required to pilot feature addition that require the entire ecosystem to converge on the standard (or) specifications of the feature[^2].
 #### BIP Workflow
 ![](images/BIPworkflow.jpg)
-The roles and responsibilities of the BIP editors are detailed in [BIP 2](BIP%202.md)
+<br>The roles and responsibilities of the BIP editors are detailed in [BIP 2](BIP%202.md)
 # References
 
 [^1]: https://github.com/bitcoin/bips/blob/master/bip-0001.mediawiki
