@@ -28,21 +28,7 @@ In sum, *HMAC-SHA512 is a function that takes messages of arbitrary length and a
 The definition of HMAC is as follows[^3]<br>
 $\text{HMAC} (K,D)= H\bigg((K'\oplus opad)\parallel H((K'\oplus ipad)\parallel D)\bigg)$<br>
 where<br>
-![equation](https://latex.codecogs.com/svg.latex?\begin{align*}%20&%20K%20\text{%20-%20Key/Secret}\\%20&%20D%20\text{%20-%20Data}\\%20&%20H%20\text{%20-%20is%20the%20hash%20function.%20BIP32%20uses%20SHA-512}\\%20&%20K'=\begin{cases}%20H(K)%20&\text{if%20K%20is%20larger%20than%20block%20size%20-%20128%20bytes%20for%20SHA-512}\\%20K%20&\text{otherwise}%20\end{cases}\\%20&%20\oplus%20\text{%20-%20XOR}\\%20&%20\text{opad}%20\text{%20-%20128%20bytes%20of%200x5c%20-%20outer%20padding}\\%20&%20\text{ipad}%20\text{-%20128%20bytes%20of%200x36%20-%20inner%20paddind}\\%20&%20\text{HMAC}(K,D)%20\text{%20-%2064bytes%20code}\\%20\end{align*})
-```math \begin {align*} 
-	& K \text{ - Key/Secret}\\
-	& D \text{ - Data}\\
-	& H \text{ - is the hash function. BIP32 uses SHA-512}\\
-	& K'=\begin{cases}
-		H(K) &\text{if K is larger than block size - 128 bytes for SHA-512}\\
-		K &\text{otherwise}
-	\end{cases}\\
-	& \oplus \text{ - XOR}\\
-	& \text{opad} \text{ - 128 bytes of 0x5c - outer padding}\\
-	& \text{ipad} \text{- 128 bytes of 0x36 - inner paddind}\\
-	& \text{HMAC}(K,D) \text{ - 64bytes code}\\
-\end{align*}
-```
+![](images/equations.png)
 #### Chain Code
 In order to add security to the child key derivation process and to add entropy[^1] to the process, *chaincode* is used. The right 32-byte of the HMAC-SHA512 output of the parent is called the *chaincode*. It is used as the key/secret in the HMAC-SHA512 process. 
 Without chaincode, it would be trivial to calculate child public keys, given the parent public key and index `i`[^2]. 
