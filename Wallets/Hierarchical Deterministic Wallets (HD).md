@@ -26,7 +26,9 @@ It is a cryptographic message authentication code (MAC) used to simultaneously v
 In sum, *HMAC-SHA512 is a function that takes messages of arbitrary length and always produces a 64 byte (or) 512 bits output.*[^4] 
 
 The definition of HMAC is as follows[^3]<br>
-$\text{HMAC} (K,D)= H\bigg((K'\oplus opad)\parallel H((K'\oplus ipad)\parallel D)\bigg)$<br>
+```math
+\text{HMAC} (K,D)= H\bigg((K'\oplus opad)\parallel H((K'\oplus ipad)\parallel D)\bigg)
+``` 
 where<br>
 ```math 
 \begin {align*} & K \text{ - Key/Secret}\\ & D \text{ - Data}\\ & H \text{ - is the hash function. BIP32 uses SHA-512}\\ & K'=\begin{cases} H(K) &\text{if K is larger than block size - 128 bytes for SHA-512}\\ K &\text{otherwise} \end{cases}\\ & \oplus \text{ - XOR}\\ & \text{opad} \text{ - 128 bytes of 0x5c - outer padding}\\ & \text{ipad} \text{- 128 bytes of 0x36 - inner paddind}\\ & \text{HMAC}(K,D) \text{ - 64bytes code}\\ \end{align*}$
