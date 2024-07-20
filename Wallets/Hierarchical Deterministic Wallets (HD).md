@@ -28,6 +28,7 @@ In sum, *HMAC-SHA512 is a function that takes messages of arbitrary length and a
 The definition of HMAC is as follows[^3]<br>
 $\text{HMAC} (K,D)= H\bigg((K'\oplus opad)\parallel H((K'\oplus ipad)\parallel D)\bigg)$<br>
 where<br>
+![equation](https://latex.codecogs.com/svg.latex?\begin{align*}%20&%20K%20\text{%20-%20Key/Secret}\\%20&%20D%20\text{%20-%20Data}\\%20&%20H%20\text{%20-%20is%20the%20hash%20function.%20BIP32%20uses%20SHA-512}\\%20&%20K'=\begin{cases}%20H(K)%20&\text{if%20K%20is%20larger%20than%20block%20size%20-%20128%20bytes%20for%20SHA-512}\\%20K%20&\text{otherwise}%20\end{cases}\\%20&%20\oplus%20\text{%20-%20XOR}\\%20&%20\text{opad}%20\text{%20-%20128%20bytes%20of%200x5c%20-%20outer%20padding}\\%20&%20\text{ipad}%20\text{-%20128%20bytes%20of%200x36%20-%20inner%20paddind}\\%20&%20\text{HMAC}(K,D)%20\text{%20-%2064bytes%20code}\\%20\end{align*})
 ```math \begin {align*} 
 	& K \text{ - Key/Secret}\\
 	& D \text{ - Data}\\
