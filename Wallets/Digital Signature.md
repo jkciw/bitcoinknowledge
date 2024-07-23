@@ -18,7 +18,7 @@ Bitcoin uses ECDSA algorithm to generate signatures. This process uses the [secp
 ### Segwit signature creation process <br>
 The legacy signature algorithm suffers from the following two issues
 1. [Quadratic Sighash Problem](Quadratic%20Sighash%20Problem.md)
-2. To compose a transaction it is essential to know the value of the inputs being used. In the context of ***cold wallets*** the following issue exists w.r.t composing a transaction: because the `TxIn` of transactions only consist of the `outpoint` and do not specify the value of the inputs explicitly, it is necessary to supply all supporting transactions along with the one that is to be signed[^2]. This acts as a bottle neck in realizing lightweight, air-gaped cold wallets. If the cold wallet relies on third parties for this information, it adds to the attack vector. 
+2. To compose a transaction it is essential to know the value of the inputs being used. In the context of ***cold wallets*** the following issue exists w.r.t composing a transaction: because the `TxIn` of transactions only consist of the `outpoint` and do not specify the value of the inputs explicitly, it is necessary to supply all supporting transactions along with the one that is to be signed[^2]. This acts as a bottle neck in realizing lightweight, air-gaped cold wallets. If the cold wallet relies on third parties for this information, it adds to the attack vector. <br>
 The segwit upgrade, [BIP 143](https://github.com/bitcoin/bips/blob/master/bip-0143.mediawiki#cite_note-5) introduced a new transaction digest algorithm that is used a the message `z` in the ECDSA process. The process is illustrated below. 
 
 ![](images/segwit_signing.jpg)
