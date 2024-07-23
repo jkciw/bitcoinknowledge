@@ -1,4 +1,4 @@
-The method to construct the hash of the message $z$ is called the signature hash algorithm (*sighash*). In legacy transactions, pre-segwit, because of the contents of the message $z$ that is signed, it is necessary that $n^2$ hashes have to be performed. Thus the time complexity of the signing process is quadratic $O(n^2)$. The pre-segwit signing process is illustrated [here](Digital%20Signature). The quadratic time complexity of the pre-segwit signing process is illustrated below:
+The method to construct the hash of the message $z$ is called the signature hash algorithm (*sighash*). In legacy transactions, pre-segwit, because of the contents of the message $z$ that is signed, it is necessary that $n^2$ hashes have to be performed. Thus the time complexity of the signing process is quadratic $O(n^2)$. The pre-segwit signing process is illustrated [here](Digital%20Signature.md). The quadratic time complexity of the pre-segwit signing process is illustrated below:
 
 ### Quadratic order of pre-segwit signing <br>
 
