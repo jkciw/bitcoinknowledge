@@ -33,7 +33,7 @@ An illustration of the signing process is provided [here](Digital%20Signature.md
 	- Alice's signature $(r,s)$
 	- Alice's public key $P$
 - Calculate the following 
-	- $u=z*s^{-1}$ $mod$ $n$, $v=r*s^{-1}$ $mod$ $n$
+	- $u=z*s^{-1} \hspace{1mm} mod \hspace{1mm} n, v=r*s^{-1} \hspace{1mm}mod \hspace{1mm}n$
 	- $uG+vP=O$
 - If $r=O_x$ , x-coordinate of $O$, then the signature is valid. 
 
