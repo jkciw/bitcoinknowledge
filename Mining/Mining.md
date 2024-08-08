@@ -10,6 +10,7 @@ where
 &\text{data - block header, except nonce}\\
 &\text{nonce - 32 bit unsigned integer}\\
 &\text{target - 256 bit unsigned integer}\\
+\end{align*}
 ```
 It is the job of the miner to randomly vary `nonce` and perform the hash and check if the hash is less than the [target](../Network/Target%20and%20Difficulty.md)
 - Because the nonce is a random number, it is impossible to 'calculate' the right nonce. 
