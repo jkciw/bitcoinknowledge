@@ -3,7 +3,7 @@ Difficulty adjustment is the process of adjusting the difficulty of the network 
 ![](images/difficulty_adjustment%201.jpg)
 
 - Once every 2016 blocks, the protocol assesses the block production time with respect to the difficulty. 
-- Difficulty is adjusted as follows[^1]
+- Difficulty is adjusted as follows[^1] <br>
 $$Difficulty_{new} = Difficulty_{old}*\frac{timestamp_{block_{2015}}-{timestamp_{block_{0}}}}{20160}$$
 
 # References

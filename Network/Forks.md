@@ -7,7 +7,7 @@ Fork refers to an event of an independent implementation of a project spinning o
 - Backward compatible changes to the [consensus rules](../Consensus/Consensus%20Rules.md) are called *soft fork*
 - ***Backward compatibility*** means that full nodes implementing the changes ***must not*** accept any blocks that full nodes not implementing the changes ***would consider invalid*** 
   
-  ![](images/Pasted%20image%2020240509165827.png)
+  ![](images/Pasted%20image%2020240509165827.png) 
 
 - If >51% of the hash power start to use the soft fork, chain split doesn't happen. 
 - There is a possibility of a short term chain split happening, consisting of new vs old (consensus) blocks. However, since majority of the miners start implementing the new change, the chain tip consisting of blocks implementing new rules would emerge as the heavier chain and the split would resolve itself.  
