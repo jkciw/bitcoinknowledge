@@ -5,10 +5,8 @@ Miners perform computational work, by expending energy, to enforce security and 
 A block is said to be *mined* if the following condition is satisfied[^1]<br>
 ```math
 \text{SHA256(SHA256(}\text{data} + \text{nonce}))< \text{target}
-```
 <br>
 where 
-```math
 \begin{align*}
 &\text{data - block header, except nonce}\\
 &\text{nonce - 32 bit unsigned integer}\\
