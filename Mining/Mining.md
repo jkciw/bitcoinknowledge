@@ -2,8 +2,8 @@ Mining is the process by which the bitcoin network is secured and decentralized 
 
 ### Proof of Work
 Miners perform computational work, by expending energy, to enforce security and decentralized consensus of the bitcoin network. This process of expending energy, by performing multiple number of ***double SHA256*** hashes per second, is called proof of work. 
-A block is said to be *mined* if the following condition is satisfied[^1]
-$$SHA256(SHA256(\text{data} + \text{nonce}))< \text{target}$$
+A block is said to be *mined* if the following condition is satisfied[^1]<br>
+$$SHA256(SHA256(\text{data} + \text{nonce}))< \text{target}$$ <br>
 where 
 ```math
 \begin{align*}
