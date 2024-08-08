@@ -32,7 +32,7 @@ The definition of HMAC is as follows[^3]<br>
 ``` 
 where<br>
 ```math 
-\begin {align*} & K \text{ - Key/Secret}\\ & D \text{ - Data}\\ & H \text{ - is the hash function. BIP32 uses SHA-512}\\ & K'=\begin{cases} H(K) &\text{if K is larger than block size - 128 bytes for SHA-512}\\ K &\text{otherwise} \end{cases}\\ & \oplus \text{ - XOR}\\ & \text{opad} \text{ - 128 bytes of 0x5c - outer padding}\\ & \text{ipad} \text{- 128 bytes of 0x36 - inner paddind}\\ & \text{HMAC}(K,D) \text{ - 64bytes code}\\ \end{align*}$
+\begin {align*} & K \text{ - Key/Secret}\\ & D \text{ - Data}\\ & H \text{ - is the hash function. BIP32 uses SHA-512}\\ & K'=\begin{cases} H(K) &\text{if K is larger than block size - 128 bytes for SHA-512}\\ K &\text{otherwise} \end{cases}\\ & \oplus \text{ - XOR}\\ & \text{opad} \text{ - 128 bytes of 0x5c - outer padding}\\ & \text{ipad} \text{- 128 bytes of 0x36 - inner paddind}\\ & \text{HMAC}(K,D) \text{ - 64bytes code}\\ \end{align*}
 ```
 #### Chain Code
 In order to add security to the child key derivation process and to add entropy[^1] to the process, *chaincode* is used. The right 32-byte of the HMAC-SHA512 output of the parent is called the *chaincode*. It is used as the key/secret in the HMAC-SHA512 process. 
