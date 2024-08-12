@@ -13,11 +13,9 @@ Event - Finding a $\text{hash}<\text{target}$ <br>
 | 2.                    | The average rate of the event remains constant over time | As shown in (5) above, on an average $\frac{ht}{2^{32}\times D}$ blocks are found in a given time intreval                                                                   |
 | 3.                    | Two events cannot occur at exactly the same instant      | A miner cannot find two hashes < target at the same time.                                                                                                                    |
 <br>
-The probability mass function (PMF) is given by
-<br>
+The probability mass function (PMF) is given by. 
 ![](images/miningprob_eq2.png)
-<br>For a poisson process, $\text{mean} = \lambda t$  , also $\text{mean}=\text{variance}$. Hence the variance of blocks found by a miner in time $t$ can be expressed as
-<br>
+<br>For a poisson process, $\text{mean} = \lambda t$  , also $\text{mean}=\text{variance}$. Hence the variance of blocks found by a miner in time $t$ can be expressed as. 
 ![](images/miningprob_eq3.png)
 <br>If the mining reward is assumed to be $B$ BTC per block, the expected reward can be expressed as
 <br>
