@@ -1,9 +1,9 @@
 ### Mining
-Mining is the process by which the bitcoin network is secured and decentralized consensus(without a central authority) is realized. It incentivizes ***miners*** to secure and facilitate decentralized consensus by awarding them a ***coinbase*** reward. This award also enforces the ***scheduled supply*** of bitcoins. 
+Mining is the process by which the bitcoin network is secured and decentralized consensus(without a central authority) is realized. It incentivizes ***miners*** to secure and facilitate decentralized consensus by awarding them a ***coinbase***[^1] reward. This award also enforces the ***scheduled supply*** of bitcoins. 
 
 ### Proof of Work
 Miners perform computational work, by expending energy, to enforce security and decentralized consensus of the bitcoin network. This process of expending energy, by performing multiple number of ***double SHA256*** hashes per second, is called proof of work. 
-A block is said to be *mined* if the following condition is satisfied[^1]<br>
+A block is said to be *mined* if the following condition is satisfied[^2]<br>
 ```math
 \text{SHA256(SHA256(}\text{data} + \text{nonce}))< \text{target}
 \begin{align*}
@@ -23,4 +23,5 @@ Satoshi Nakamoto began mining with a CPU on 3rd Jan 2009. The hardware used to m
 ![](images/bitcoin-mining-difficulty-3605390494.png)
 # References
 
-[^1]: https://bitcoin.stackexchange.com/questions/148/what-exactly-is-mining
+[^1]: https://developer.bitcoin.org/reference/transactions.html?highlight=coinbase
+[^2]:  https://bitcoin.stackexchange.com/questions/148/what-exactly-is-mining
