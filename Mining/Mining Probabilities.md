@@ -16,15 +16,9 @@ Event - Finding a $\text{hash}<\text{target}$ <br>
 The probability mass function (PMF) is given by <br>
 ![](images/miningprob_eq2.png)
 <br>
-For a poisson process, $\text{mean} = \lambda t$  , also $\text{mean}=\text{variance}$. Hence the variance of blocks found by a miner in time $t$ can be expressed as <br>
-![](images/miningprob_eq3.png)
-<br>
-If the mining reward is assumed to be $B$ BTC per block, the expected reward can be expressed as <br>
-![](images/miningprob_eq4.png)
-<br>
- the variance in the mining reward received by the miner can be expressed as <br>
- ![](images/miningprob_eq5.png)
- 
+For a poisson process, $\text{mean} = \lambda t$  , also $\text{mean}=\text{variance}$. Hence the variance of blocks found by a miner in time $t$ can be expressed as <br>![](images/miningprob_eq3.png)<br>
+If the mining reward is assumed to be $B$ BTC per block, the expected reward can be expressed as <br>![](images/miningprob_eq4.png)<br>
+ the variance in the mining reward received by the miner can be expressed as <br>![](images/miningprob_eq5.png) 
  <br>The standard deviation, a measure of the amount of variation a *random variable* $X$ has about its mean, of the mining reward can be expressed, from (10) as <br>![](images/miningprob_eq6.png)
  
 <br> The probability that a miner, mining with a constant hash rate of $h$, will ever receive a payment during the time period $t$ can be expressed as <br>
