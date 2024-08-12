@@ -1,6 +1,6 @@
 ### Understanding the probability of mining a block[^1]
 Bitcoin mining is the process of repeatedly computing hashes (double SHA256) of the block header, slightly modified each time, until a hash less than the [[Block - Time Stamps#Difficulty Adjustment Algorithm|target ]] is found. Weather a computed hash leads to a block being mined is a ***random event***, independent of the validity of any other calculated hashes.  <br>
-$$
+``` math
 \begin{align}
 &P(\text{finding a block})= \frac{\text{target}_{\text{current}}}{2^{256}} \tag{1}\\
 \\
@@ -17,7 +17,7 @@ $$
 &\text{for a time} \hspace{2mm} t \hspace{2mm} \& \hspace{2mm} \text{hash rate} \hspace{2mm} h\\
 &\text{No. of Blocks Found} = \frac{ht}{2^{32}\times D} \tag{5}\\
 \end{align}
-$$
+```
 
 From the above equations, it can be derived that  miner with hash rate $h$ and mining for a time period $t$ will find $\frac{ht}{2^{32}\times D}$ blocks. 
 
@@ -32,7 +32,7 @@ Event - Finding a $\text{hash}<\text{target}$ <br>
 | 3.                    | Two events cannot occur at exactly the same instant      | A miner cannot find two hashes < target at the same time.                                                                                                                    |
 <br>
 The probability mass function (PMF) is given by 
-$$
+```math
 \begin{align}
 &P(X=K) =\frac{e^{-\lambda t}\times(\lambda t)^K}{K!}\tag{6}\\
 \\
@@ -40,12 +40,29 @@ $$
 &K - \text{No.of blocks found}\\
 &\text{rate parameter}(\lambda) - \frac{h}{2^{32}\times D}\tag{7}
 \end{align}
-$$
+```
 <br>
 For a poisson process, $\text{mean} = \lambda t$  , also $\text{mean}=\text{variance}$. Hence the variance of blocks found by a miner in time $t$ can be expressed as 
-$$ \lambda = \frac{ht}{2^{32}\times D} \tag{8}$$ <br>
-If the mining reward is assumed to be $B$ BTC per block, the expected reward can be expressed as <br>$$ \lambda \times B = \frac{htB}{2^{32}\times D} \tag{9}$$<br> the variance in the mining reward received by the miner can be expressed as <br>$$ \lambda \times B^2 = \frac{htB^2}{2^{32}\times D} \tag{10}$$<br>The standard deviation, a measure of the amount of variation a *random variable* $X$ has about its mean, of the mining reward can be expressed, from (10) as <br>$$\sigma = \sqrt{\lambda B^2} \tag{11}$$
-<br> The probability that a miner, mining with a constant hash rate of $h$, will ever receive a payment during the time period $t$ can be expressed as <br>$$P(\text{receiving reward})=1-e^{-\lambda} \tag{12}$$<br>
+``` math
+\lambda = \frac{ht}{2^{32}\times D} \tag{8}
+```
+<br>
+If the mining reward is assumed to be $B$ BTC per block, the expected reward can be expressed as <br>``` math
+ \lambda \times B = \frac{htB}{2^{32}\times D} \tag{9}``` <br> 
+ the variance in the mining reward received by the miner can be expressed as <br>
+ ``` math
+\lambda \times B^2 = \frac{htB^2}{2^{32}\times D} \tag{10} 
+```
+ <br>The standard deviation, a measure of the amount of variation a *random variable* $X$ has about its mean, of the mining reward can be expressed, from (10) as <br>
+ ``` math
+ \sigma = \sqrt{\lambda B^2} \tag{11}
+```
+ 
+<br> The probability that a miner, mining with a constant hash rate of $h$, will ever receive a payment during the time period $t$ can be expressed as <br>
+``` math
+P(\text{receiving reward})=1-e^{-\lambda} \tag{12}
+```
+<br>
 Understanding the above equations using an example would be helpful. Consider a miner with a constant hash rate of 333 PHs, difficulty of 40.64G, block reward of 25 BTC, for 24 hrs. The Probability mass function (PMF) plot is shown below<br>
 ![](images/pmf_24hrs.png)<br>
 As can be seen from the plot, the miner has ~ 3% chance of finding 165 no of blocks in 24 hrs. The same miner has  ~35% chance of finding 1 block in 10 minutes. The PMF plot is shown below. <br>
