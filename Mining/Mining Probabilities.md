@@ -1,11 +1,15 @@
 ### Understanding the probability of mining a block[^1]
-Bitcoin mining is the process of repeatedly computing hashes (double SHA256) of the block header, slightly modified each time, until a hash less than the [[Block - Time Stamps#Difficulty Adjustment Algorithm|target ]] is found. Weather a computed hash leads to a block being mined is a ***random event***, independent of the validity of any other calculated hashes.  <br>
+Bitcoin mining is the process of repeatedly computing hashes (double SHA256) of the block header, slightly modified each time, until a hash less than the [target](../Network/Target%20and%20Difficulty.md) is found. Weather a computed hash leads to a block being mined is a ***random event***, independent of the validity of any other calculated hashes.
+
 ![](images/miningprob_eq1.png)
-<br>From the above equations, it can be derived that  miner with hash rate $h$ and mining for a time period $t$ will find $\frac{ht}{2^{32}\times D}$ blocks. 
+
+
+From the above equations, it can be derived that  miner with hash rate $h$ and mining for a time period $t$ will find $\frac{ht}{2^{32}\times D}$ blocks. 
 
 ### Poisson Process
 Poisson process is a stochastic process that models the occurrence of random events over time. These events occur continuously and independent of each other. By definition, a poisson process has the following properties. A table illustrating how and why the process of *mining a block* can be understood and analyzed as poisson process is shown below:<br>
-Event - Finding a $\text{hash}<\text{target}$ <br>
+Event - Finding a $\text{hash}<\text{target}$
+
 
 | <center>S.No</center> | <center>Poisson property</center>                        | <center>Mining</center>                                                                                                                                                      |
 | --------------------- | -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
