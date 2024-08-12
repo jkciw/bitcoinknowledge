@@ -61,11 +61,9 @@ If the mining reward is assumed to be $B$ BTC per block, the expected reward can
  \sigma = \sqrt{\lambda B^2} \tag{11}
 ```
  
-<br> The probability that a miner, mining with a constant hash rate of $h$, will ever receive a payment during the time period $t$ can be expressed as <br>
-``` math
-P(\text{receiving reward})=1-e^{-\lambda} \tag{12}
-```
-<br>
+<br> The probability that a miner, mining with a constant hash rate of $h$, will ever receive a payment during the time period $t$ can be expressed as 
+$$P(\text{receiving reward})=1-e^{-\lambda} \tag{12}$$
+
 Understanding the above equations using an example would be helpful. Consider a miner with a constant hash rate of 333 PHs, difficulty of 40.64G, block reward of 25 BTC, for 24 hrs. The Probability mass function (PMF) plot is shown below<br>
 ![](images/pmf_24hrs.png)<br>
 As can be seen from the plot, the miner has ~ 3% chance of finding 165 no of blocks in 24 hrs. The same miner has  ~35% chance of finding 1 block in 10 minutes. The PMF plot is shown below. 
