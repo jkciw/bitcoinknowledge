@@ -2,7 +2,7 @@
 Bitcoin mining is the process of repeatedly computing hashes (double SHA256) of the block header, slightly modified each time, until a hash less than the [[Block - Time Stamps#Difficulty Adjustment Algorithm|target ]] is found. Weather a computed hash leads to a block being mined is a ***random event***, independent of the validity of any other calculated hashes.  <br>
 ``` math
 \begin{align}
-&P(\text{finding a block})= \frac{\text{target}_{\text{current}}}{2^{256}} \tag{1}\\
+&P(\text{finding a block})= \frac{\text{target}_{\text{current}}}{2^{256}} \\
 \\
 &\text{target}_{current} = \frac{\text{target}_{maximum}}{D} \tag{2}\\
 &\text{where D - difficulty}\\
@@ -31,7 +31,7 @@ Event - Finding a $\text{hash}<\text{target}$ <br>
 | 2.                    | The average rate of the event remains constant over time | As shown in (5) above, on an average $\frac{ht}{2^{32}\times D}$ blocks are found in a given time intreval                                                                   |
 | 3.                    | Two events cannot occur at exactly the same instant      | A miner cannot find two hashes < target at the same time.                                                                                                                    |
 <br>
-The probability mass function (PMF) is given by 
+The probability mass function (PMF) is given by <br>
 ```math
 \begin{align}
 &P(X=K) =\frac{e^{-\lambda t}\times(\lambda t)^K}{K!}\tag{6}\\
@@ -42,13 +42,16 @@ The probability mass function (PMF) is given by
 \end{align}
 ```
 <br>
-For a poisson process, $\text{mean} = \lambda t$  , also $\text{mean}=\text{variance}$. Hence the variance of blocks found by a miner in time $t$ can be expressed as 
+For a poisson process, $\text{mean} = \lambda t$  , also $\text{mean}=\text{variance}$. Hence the variance of blocks found by a miner in time $t$ can be expressed as <br>
 ``` math
 \lambda = \frac{ht}{2^{32}\times D} \tag{8}
 ```
 <br>
-If the mining reward is assumed to be $B$ BTC per block, the expected reward can be expressed as <br>``` math
- \lambda \times B = \frac{htB}{2^{32}\times D} \tag{9}``` <br> 
+If the mining reward is assumed to be $B$ BTC per block, the expected reward can be expressed as <br>
+``` math 
+\lambda \times B = \frac{htB}{2^{32}\times D} \tag{9}
+```
+<br>
  the variance in the mining reward received by the miner can be expressed as <br>
  ``` math
 \lambda \times B^2 = \frac{htB^2}{2^{32}\times D} \tag{10} 
@@ -65,7 +68,7 @@ P(\text{receiving reward})=1-e^{-\lambda} \tag{12}
 <br>
 Understanding the above equations using an example would be helpful. Consider a miner with a constant hash rate of 333 PHs, difficulty of 40.64G, block reward of 25 BTC, for 24 hrs. The Probability mass function (PMF) plot is shown below<br>
 ![](images/pmf_24hrs.png)<br>
-As can be seen from the plot, the miner has ~ 3% chance of finding 165 no of blocks in 24 hrs. The same miner has  ~35% chance of finding 1 block in 10 minutes. The PMF plot is shown below. <br>
+As can be seen from the plot, the miner has ~ 3% chance of finding 165 no of blocks in 24 hrs. The same miner has  ~35% chance of finding 1 block in 10 minutes. The PMF plot is shown below. 
 ![](images/pmf_10_min.png)
 <br>
 The variance in the expected BTC reward calculated using (10) for 24 hr period is 103020 BTC. The standard deviation of the expected reward is 320.97 BTC. As can be seen, the miner suffers from quite a large block reward deviation. 
