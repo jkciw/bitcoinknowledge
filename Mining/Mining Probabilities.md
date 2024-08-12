@@ -13,15 +13,31 @@ Event - Finding a $\text{hash}<\text{target}$ <br>
 | 2.                    | The average rate of the event remains constant over time | As shown in (5) above, on an average $\frac{ht}{2^{32}\times D}$ blocks are found in a given time intreval                                                                   |
 | 3.                    | Two events cannot occur at exactly the same instant      | A miner cannot find two hashes < target at the same time.                                                                                                                    |
 <br>
-The probability mass function (PMF) is given by<br>![](images/miningprob_eq2.png)<br>
-For a poisson process, $\text{mean} = \lambda t$  , also $\text{mean}=\text{variance}$. Hence the variance of blocks found by a miner in time $t$ can be expressed as<br>  ![](images/miningprob_eq3.png)<br>
-If the mining reward is assumed to be $B$ BTC per block, the expected reward can be expressed as<br>  ![](images/miningprob_eq4.png)<br>
-the variance in the mining reward received by the miner can be expressed as <br> ![](images/miningprob_eq5.png)<br> 
- The standard deviation, a measure of the amount of variation a *random variable* $X$ has about its mean, of the mining reward can be expressed, from (10) as<br> ![](images/miningprob_eq6.png)<br>
+The probability mass function (PMF) is given by
+<br>
+![](images/miningprob_eq2.png)
+<br>
+For a poisson process, $\text{mean} = \lambda t$  , also $\text{mean}=\text{variance}$. Hence the variance of blocks found by a miner in time $t$ can be expressed as
+<br>
+![](images/miningprob_eq3.png)
+<br>
+If the mining reward is assumed to be $B$ BTC per block, the expected reward can be expressed as
+<br>
+![](images/miningprob_eq4.png)
+<br>
+the variance in the mining reward received by the miner can be expressed as 
+<br>
+![](images/miningprob_eq5.png)
+<br> 
+ The standard deviation, a measure of the amount of variation a *random variable* $X$ has about its mean, of the mining reward can be expressed, from (10) as
+ <br>
+  ![](images/miningprob_eq6.png)
+ <br>
  
-The probability that a miner, mining with a constant hash rate of $h$, will ever receive a payment during the time period $t$ can be expressed as<br> 
- ![](images/miningprob_eq7.png)<br>
-
+The probability that a miner, mining with a constant hash rate of $h$, will ever receive a payment during the time period $t$ can be expressed as
+<br> 
+ ![](images/miningprob_eq7.png)
+ <br>
 Understanding the above equations using an example would be helpful. Consider a miner with a constant hash rate of 333 PHs, difficulty of 40.64G, block reward of 25 BTC, for 24 hrs. The Probability mass function (PMF) plot is shown below<br>
 ![](images/pmf_24hrs.png)<br>
 As can be seen from the plot, the miner has ~ 3% chance of finding 165 no of blocks in 24 hrs. The same miner has  ~35% chance of finding 1 block in 10 minutes. The PMF plot is shown below. 
