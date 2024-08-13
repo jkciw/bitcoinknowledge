@@ -54,6 +54,10 @@ As can be seen from the plot, the miner has ~ 3% chance of finding 165 no of blo
 
 The variance in the expected BTC reward calculated using (10) for 24 hr period is 103020 BTC. The standard deviation of the expected reward is 320.97 BTC. As can be seen, the miner suffers from quite a large block reward deviation. 
 
+It is to be noted that the hash values are quite high for a solo miner and are calculated for illustrative purposes only. 
+
+A realistic hash rate, difficulty and would be 180 GH/s, 1.18G respectively. These values are typical of a Antminer S1 ASIC and difficulty during early 2014. On repeating the above calculation for these values, only 0.00306862 blocks will be found in 24hrs (i.e) there is close to a 100% chance of not finding a block in 24 hrs. In fact, it would likely take 326 days to find a block with the hash rate, provided the difficulty remains the same. Such are the odds of solo mining. 
+
 # References
 
 [^1]: Rosenfeld, Meni. “Analysis of Bitcoin Pooled Mining Reward Systems.” _ArXiv (Cornell University)_, 1 Jan. 2011, https://doi.org/10.48550/arxiv.1112.4980.\
