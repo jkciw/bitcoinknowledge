@@ -56,7 +56,7 @@ The variance in the expected BTC reward calculated using (10) for 24 hr period i
 
 It is to be noted that the hash values used in the above calculations are quite high for a solo miner and are used for illustrative purposes only. 
 
-A realistic hash rate and difficulty would be 180 GH/s & 1.18G respectively. These values are typical of a Antminer S1 ASIC and difficulty during early 2014. On repeating the above calculation for these values, only 0.00306862 blocks are likely to be found in 24hrs (i.e) there is close to a 100% chance of not finding a block in 24 hrs. In fact, it would likely take ~326 days$(\frac{24}{0.00306862})$ to find a block with the hash rate, provided the difficulty remains the same. Such are the odds of solo mining. 
+A realistic hash rate and difficulty would be 180 GH/s & 1.18G respectively. These values are typical of a Antminer S1 ASIC and difficulty during early 2014. On repeating the above calculation for these values, only 0.00306862 blocks are likely to be found in 24hrs (i.e) there is close to a 100% chance of not finding a block in 24 hrs. In fact, it would likely take ~326 days $(\frac{24}{0.00306862})$  to find a block with the hash rate, provided the difficulty remains the same. Such are the odds of solo mining. 
 
 The PMF plot for the above mentioned hash rate and difficulty is shown below. As explained, the probability of finding a block with the hash rate, in 24 hrs, is zero. 
 
