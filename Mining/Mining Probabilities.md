@@ -65,6 +65,9 @@ The PMF plot for the above mentioned hash rate and difficulty is shown below. As
 ![](images/pmf_24hrs_lowhash.png)
 
 The code to plot the PMF can be found [here](../Mining/pmf.py)
+
+# Credits
+I would like to thank [Faizal](https://twitter.com/faisal_qrs) for helping with the calculations. 
 # References
 
 [^1]: Rosenfeld, Meni. “Analysis of Bitcoin Pooled Mining Reward Systems.” _ArXiv (Cornell University)_, 1 Jan. 2011, https://doi.org/10.48550/arxiv.1112.4980.\
@@ -72,5 +75,3 @@ The code to plot the PMF can be found [here](../Mining/pmf.py)
 [^3]: https://bitcoin.stackexchange.com/questions/43440/why-is-poisson-instead-of-negative-binomial-used-for-computing-attackers-potent
 
 
-# Credits
-I would like to thank [Faizal](https://twitter.com/faisal_qrs) for helping with the calculations. 
