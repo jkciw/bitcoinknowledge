@@ -63,6 +63,7 @@ The PMF plot for the above mentioned hash rate and difficulty is shown below. As
 
 ![](images/pmf_24hrs_lowhash.png)
 
+The code to plot the PMF can be found [here](../Mining/pmf.py)
 # References
 
 [^1]: Rosenfeld, Meni. “Analysis of Bitcoin Pooled Mining Reward Systems.” _ArXiv (Cornell University)_, 1 Jan. 2011, https://doi.org/10.48550/arxiv.1112.4980.\

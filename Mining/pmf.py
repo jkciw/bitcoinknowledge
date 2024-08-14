@@ -1,0 +1,50 @@
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy import stats
+# To calculate the probability mass function(PMF) for the event of finding/mining a block
+
+# Constants
+BLOCK_REWARD = 25  # BTC
+HASH_RATE = 180 * 10**9  # hashes per second
+DIFFICULTY = 1.18 * 10**9 
+TIME_PERIOD = 24*3600  # 24 hours in seconds
+
+# Calculate lambda (average number of blocks in the time period)
+target = (2**224) / DIFFICULTY
+prob_success = target / (2**256)
+lambda_param = HASH_RATE * prob_success * TIME_PERIOD
+
+# Generate x-axis values (number of blocks)
+x = np.arange(0, 10) # increase (or) decrease as needed
+
+
+# Calculate PMF for each x, expressed as a %
+y = stats.poisson.pmf(x, lambda_param)*100
+
+# Plotting
+plt.figure(figsize=(12, 6))
+#plt.bar(x, y, alpha=0.8) # use bar plots for well formed poission distribution
+plt.stem(x,y, basefmt=" ") # use stem plots if only few data points are available for plotting
+plt.xlabel('No. of blocks likely to be found')
+plt.ylabel('Probability of fining the no.of blocks')
+plt.title(f'PMF of Blocks Found in {TIME_PERIOD/3600} hrs\n'
+          f'(The expected Reward = {lambda_param * BLOCK_REWARD:.2f} BTC)')
+plt.grid(alpha=0.3)
+
+# Add expected value line
+expected_blocks = lambda_param
+plt.axvline(x=expected_blocks, color='r', linestyle='--', label=f'{lambda_param:.0f} no of blocks are likely to be found in {TIME_PERIOD/3600} hrs')
+plt.gca().yaxis.set_major_formatter(plt.FuncFormatter(lambda x, p: f"{x:.2f}%"))
+
+plt.legend()
+#adjust axis if necessary
+#plt.xlim(100, max(x) + 0.5)
+#plt.ylim(0, max(y) * 1.1)
+
+plt.show()
+print(f"Expected number of blocks: {lambda_param:.2f}")
+print(f"Expected reward: {lambda_param * BLOCK_REWARD:.2f} BTC")
+print(f"Variance of reward: {lambda_param * BLOCK_REWARD**2:.2f} BTC")
+print(f"Standard deviation of reward: {np.sqrt(lambda_param * BLOCK_REWARD**2):.2f} BTC")
+print(f"Standard deviation as a percent of expected reward: {(np.sqrt(lambda_param * pow(BLOCK_REWARD,2)))/(lambda_param*BLOCK_REWARD):.2f} %")
+print(f"The probability that the miner will receive a reward at all: {(1-np.exp(-lambda_param))}")
