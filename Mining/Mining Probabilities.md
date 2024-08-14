@@ -7,7 +7,8 @@ Bitcoin mining is the process of repeatedly computing hashes (double SHA256) of 
 From the above equations, it can be derived that  miner with hash rate $h$ and mining for a time period $t$ will find $\frac{ht}{2^{32}\times D}$ blocks. 
 
 ### Poisson Process
-Poisson process is a stochastic process that models the occurrence of random events over time. These events occur continuously and independent of each other. By definition, a poisson process has the following properties. A table illustrating how and why the process of *mining a block* can be understood and analyzed as poisson process is shown below[^2]:<br>
+Poisson process is a stochastic process that models the occurrence of random events over time. These events occur continuously and independent of each other. By definition, a poisson process has the properties listed below. An authoritative resource to understand the poisson process in detail would be the text book written by Papoulis[^2]. A table illustrating how and why the process of *mining a block* can be understood and analyzed as poisson process is shown below[^3]:
+
 Event - Finding a $\text{hash}<\text{target}$
 
 
@@ -67,4 +68,9 @@ The code to plot the PMF can be found [here](../Mining/pmf.py)
 # References
 
 [^1]: Rosenfeld, Meni. “Analysis of Bitcoin Pooled Mining Reward Systems.” _ArXiv (Cornell University)_, 1 Jan. 2011, https://doi.org/10.48550/arxiv.1112.4980.\
-[^2]: https://bitcoin.stackexchange.com/questions/43440/why-is-poisson-instead-of-negative-binomial-used-for-computing-attackers-potent
+[^2]: Papoulis, A. and Pillai, S.U. (2014) _Probability, random variables, and stochastic processes Athanasios Papoulis ; S. Unnikrishna Pillai_. Boston, Mass: McGraw-Hill.
+[^3]: https://bitcoin.stackexchange.com/questions/43440/why-is-poisson-instead-of-negative-binomial-used-for-computing-attackers-potent
+
+
+# Credits
+I would like to thank [Faizal](https://twitter.com/faisal_qrs) for helping with the calculations. 
