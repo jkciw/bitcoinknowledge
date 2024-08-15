@@ -3,7 +3,7 @@
 
 ![](images/difficulty_adjustment%201.jpg)
 
-- The maximum target is the largest possible 256 bit number. 
+- The maximum target is a large 256 bit number. 
  
 $$
 \begin{align*}
