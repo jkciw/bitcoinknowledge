@@ -30,7 +30,7 @@ If the mining reward is assumed to be $B$ BTC per block, the expected reward can
 
 ![](images/miningprob_eq4.png)
 
-the variance in the mining reward received by the miner can be expressed as 
+the variance in the mining reward, a measure of how dispersed the possible mining reward could be around the expected reward (9), can be expressed as 
 
 
 ![](images/miningprob_eq5.png)
@@ -45,27 +45,33 @@ The standard deviation, a measure of the amount of variation a *random variable*
 
  ![](images/miningprob_eq7.png)
  
- Understanding the above equations using an example would be helpful. Consider a miner with a constant hash rate of 333 PHs, difficulty of 40.64G, block reward of 25 BTC, for 24 hrs. The Probability mass function (PMF) plot is shown below
+ Understanding the above equations using examples would be helpful. 
+#### Example 1 
+Consider a miner with a constant hash rate of 333 PHs, difficulty of 40.64G, block reward of 25 BTC, for 24 hrs. The Probability mass function (PMF) plot is shown below
  
 ![](images/pmf_24hrs.png)
 
-As can be seen from the plot, the miner has ~ 3% chance of finding 165 no of blocks in 24 hrs. The same miner has  ~35% chance of finding 1 block in 10 minutes. The PMF plot is shown below. 
+As can be seen from the plot, the miner has ~ 3% chance of finding 165 no of blocks in 24 hrs. As another example, if we consider the same miner mining for only 10 minutes, he has  ~35% chance of finding 1 block in 10 minutes. The PMF plot for this case is shown below. 
 
 ![](images/pmf_10_min.png)
 
-The variance in the expected BTC reward calculated using (10) for 24 hr period is 103020 BTC. The standard deviation of the expected reward is 320.97 BTC. As can be seen, the miner suffers from quite a large block reward deviation. 
+The variance in the expected BTC reward calculated using (10) for 24 hr period is 2575517.12 $BTC^2$. The standard deviation of the expected reward is 1604.84 BTC. As can be seen, the miner suffers from quite a large block reward deviation. 
 
 It is to be noted that the hash values used in the above calculations are quite high for a solo miner and are used for illustrative purposes only. 
 
-A realistic hash rate and difficulty would be 180 GH/s & 1.18G respectively. These values are typical of a Antminer S1 ASIC and difficulty during early 2014. On repeating the above calculation for these values, only 0.00306862 blocks are likely to be found in 24hrs (i.e) there is close to a 100% chance of not finding a block in 24 hrs. In fact, it would likely take ~326 days $(\frac{24}{0.00306862})$  to find a block with the hash rate, provided the difficulty remains the same. Such are the odds of solo mining. 
+#### Example 2
+A realistic hash rate and difficulty would be 180 GH/s & 1.18G respectively. These values are typical of a Antminer S1 ASIC and difficulty during early 2014. On repeating the above calculation for these values, only 0.00306862 blocks are likely to be found in 24hrs (i.e) there is close to a 100% chance of not finding a block in 24 hrs. In fact, it would likely take ~326 days $(\frac{24}{0.00306862})$  to find a block with the hash rate, provided the difficulty remains the same. The expected reward, given the probability of finding a block in the 24hr window is 0.0767 BTC. The variance in the reward would be 47.95 $BTC^2$. The standard deviation of the reward that the miner can expect, calculated using (11) for this case is 6.92 BTC. This standard deviation when expressed as a percentage of the expected reward $\frac{\sqrt(\lambda \times B^2)}{\lambda}\times 100 \%$ equals to $9026.05\%$ . A solo miner faces large variance and deviations in the expected rewards. Such are the odds of solo mining. 
 
-The PMF plot for the above mentioned hash rate and difficulty is shown below. As explained, the probability of finding a block with the hash rate, in 24 hrs, is zero. 
+The PMF plot for the above mentioned hash rate, difficulty and time period is shown below. As explained, the probability of finding a block with this hash rate, in 24 hrs, is close to zero. 
 
 
 ![](images/pmf_24hrs_lowhash.png)
 
-The code to plot the PMF can be found [here](../Mining/pmf.py)
 
+#### Example 3
+Let us consider another example of a solo miner, owning 100 Antminer S19 Pro, capable of 110 Th/s individually. The difficulty, as on August 2024, is 86.87T and the block subsidy is 3.125 BTC. If the miner, with 100 S19 Pros, mine for 24 hrs, the probability of him finding a block is close to 0. Numerically, since finding a fraction of a block doesn't make sense for a solo miner, he is likely to only find 0.00255 block. For this effort, he can expect a reward of 0.0249 BTC. The standard deviation as a percentage of the expected reward is 1981.35%. The probability that the miner will ever receive a reward in the 24 hrs time period is 0.0025. 
+
+The code to plot the PMF can be found [here](../Mining/pmf.py)
 # Credits
 I would like to thank [Faizal](https://twitter.com/faisal_qrs) for helping with the calculations. 
 # References

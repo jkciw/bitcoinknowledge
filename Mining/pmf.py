@@ -4,9 +4,9 @@ from scipy import stats
 # To calculate the probability mass function(PMF) for the event of finding/mining a block
 
 # Constants
-BLOCK_REWARD = 25  # BTC
-HASH_RATE = 180 * 10**9  # hashes per second
-DIFFICULTY = 1.18 * 10**9 
+BLOCK_REWARD = 3.125  # BTC
+HASH_RATE = 100*110 * 10**12  # hashes per second
+DIFFICULTY = 86.87 * 10**12 
 TIME_PERIOD = 24*3600  # 24 hours in seconds
 
 # Calculate lambda (average number of blocks in the time period)
@@ -15,7 +15,7 @@ prob_success = target / (2**256)
 lambda_param = HASH_RATE * prob_success * TIME_PERIOD
 
 # Generate x-axis values (number of blocks)
-x = np.arange(0, 10) # increase (or) decrease as needed
+x = np.arange(0, 1) # increase (or) decrease as needed
 
 
 # Calculate PMF for each x, expressed as a %
@@ -41,10 +41,17 @@ plt.legend()
 #plt.xlim(100, max(x) + 0.5)
 #plt.ylim(0, max(y) * 1.1)
 
+# Metrics
+no_blocks = lambda_param
+reward = no_blocks * BLOCK_REWARD
+variance_reward = reward * BLOCK_REWARD
+sd_reward = np.sqrt(variance_reward)
+sd_percent = (sd_reward/reward)*100
+probability_reward = 1-np.exp(-lambda_param)
 plt.show()
-print(f"Expected number of blocks: {lambda_param:.2f}")
-print(f"Expected reward: {lambda_param * BLOCK_REWARD:.2f} BTC")
-print(f"Variance of reward: {lambda_param * BLOCK_REWARD**2:.2f} BTC")
-print(f"Standard deviation of reward: {np.sqrt(lambda_param * BLOCK_REWARD**2):.2f} BTC")
-print(f"Standard deviation as a percent of expected reward: {(np.sqrt(lambda_param * pow(BLOCK_REWARD,2)))/(lambda_param*BLOCK_REWARD):.2f} %")
-print(f"The probability that the miner will receive a reward at all: {(1-np.exp(-lambda_param))}")
+print(f"Expected number of blocks: {no_blocks:.5f}")
+print(f"Expected reward: {reward:.4f} BTC")
+print(f"Variance of reward: {variance_reward:.4f} BTC")
+print(f"Standard deviation of reward: {sd_reward:.4f} BTC")
+print(f"Standard deviation as a percent of expected reward: {sd_percent:.2f} %")
+print(f"The probability that the miner will receive a reward at all: {probability_reward:.4f}")
