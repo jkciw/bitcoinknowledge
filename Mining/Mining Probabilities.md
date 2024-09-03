@@ -49,7 +49,11 @@ The standard deviation, a measure of the amount of variation a *random variable*
 #### Example 1 
 Consider a miner with a constant hash rate of 228 EH/s, difficulty of 86.87T, block reward of 3.125 BTC, for 24 hrs. 
 - Using (8) and (12), we can calculate that the probability that the miner will mine at least one block and receive a reward, in 24 hrs, is 100 %
-- The cumulative distribution function (CDF) of Poisson distribution is defined as: $F(k; \lambda) = \displaystyle\sum_{i=0}^k\frac{\lambda^i e^{-\lambda}}{i!}$. It gives us the probability of finding less than or equal to a certain number of blocks. Using the expression $1-F(k;\lambda)$ , we can calculate the probability of finding ***at least*** $X$ number of blocks given the hashrate, difficulty and time. This is plotted below
+- The cumulative distribution function (CDF) of Poisson distribution is defined as: 
+``` math
+F(k; \lambda) = \displaystyle\sum_{i=0}^k\frac{\lambda^i e^{-\lambda}}{i!}
+```
+- It gives us the probability of finding less than or equal to a certain number of blocks. Using the expression $1-F(k;\lambda)$ , we can calculate the probability of finding ***at least*** $X$ number of blocks given the hashrate, difficulty and time. This is plotted below
 	![](images/atleastprob_pool.png)
 - Similarly, using CDF, we can plot the probabilities of finding a range of blocks given the hashrate, difficulty and time. 
 	![](images/rangeprob_pool.png)
@@ -63,7 +67,7 @@ The above example is that of a mining pool owning ~30% of the total hash rate (6
 #### Example 2
 Let us consider another example of a solo miner, owning 10 Antminer S19 Pro, capable of 110 Th/s individually. The difficulty, as on August 2024, is 86.87T and the block subsidy is 3.125 BTC. 
 - The probability that the miner will ever mine a block is 0.03%
-- The probability of finding *** at least *** X no of blocks is plotted below. It can be seen that no blocks are likely to be found in 24 hours. 
+- The probability of finding ***at least*** X no of blocks is plotted below. It can be seen that no blocks are likely to be found in 24 hours. 
   ![](images/atleastprob_solo.png)
 - The PMF plot for the given difficulty, hashrate and time period is plotted below. How many ever 24 hour mining window that the solo miner tries, he is certain not to find a block. 
   ![](images/pmf_24hrs_solo.png)
