@@ -128,7 +128,7 @@ def atleastprob_examples():
 
 if __name__ == '__main__':
     print_statistics()
-    rangeprob_examples()
-    atleastprob_examples()
-    pmf_example()
+    # rangeprob_examples()
+    # atleastprob_examples()
+    # pmf_example()
 
