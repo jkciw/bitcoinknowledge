@@ -1,7 +1,8 @@
 # The probabilities of pooled mining
 
 The process of several miners working together to find a block and splitting the reward (coinbase + transaction fee) in proportion to the hash they contributed is called pooled mining. 
-Variance in the mining reward refers to the uncertainty in mining reward over a given period of time. Mining being a [poisson process](Mining%20Probabilities.md)  , variance is expressed as $\lambda \times B^2$. 
+
+Variance in mining reward refers to the uncertainty in receiving the mining reward over a given period of time. Mining being a [poisson process](Mining%20Probabilities.md)  , the variance of reward received is expressed as $\lambda \times B^2$. 
 
 Let the pool's total hash rate be $H$. Then
 

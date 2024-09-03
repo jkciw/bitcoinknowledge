@@ -47,7 +47,7 @@ bars = ax.barh(labels, variances, color=colors, alpha=0.8)
 
 # Customize the plot
 ax.set_xlabel('Variance (BTC²)', fontsize=12)
-ax.set_title('Comparison of Mining Variances (24-hour period)', fontsize=16)
+ax.set_title('Comparison of Mining Reward Variances (24-hour period)', fontsize=16)
 ax.set_xscale('log')
 
 # Add value labels to the end of each bar
