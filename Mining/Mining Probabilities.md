@@ -66,8 +66,8 @@ F(k; \lambda) = \displaystyle\sum_{i=0}^k\frac{\lambda^i e^{-\lambda}}{i!}
 The above example is that of a mining pool owning ~30% of the total hash rate (680 EH/s)
 #### Example 2
 Let us consider another example of a solo miner, owning 10 Antminer S19 Pro, capable of 110 Th/s individually. The difficulty, as on August 2024, is 86.87T and the block subsidy is 3.125 BTC. 
-- The probability that the miner will ever mine a block is 0.03%
-- The probability of finding ***at least*** X no of blocks is plotted below. It can be seen that no blocks are likely to be found in 24 hours. 
+- The probability that the miner will ever mine a block, in 24hrs, is 0.03%
+- The probability of finding ***at least*** X no of blocks is plotted below. It can be seen that no blocks are likely to be found in a 24 hour window. 
   ![](images/atleastprob_solo.png)
 - The PMF plot for the given difficulty, hashrate and time period is plotted below. How many ever 24 hour mining window that the solo miner tries, he is certain not to find a block. 
   ![](images/pmf_24hrs_solo.png)
