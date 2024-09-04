@@ -25,3 +25,22 @@ On calculating using equations (1) through (11), we get the following results:
 The above results, when plotted as below, underscore that the individual's hash rate, when mining inside a pool, suffers from reduced reward variance. 
 
 ![](images/variance_comp.png)
+
+The pool, maintained by an operator, typically charges a fixed percentage $f$ of the block reward $B$ for its services. Thus the pool operator receives $f\times B$ for his services. The remaining reward $(1-f)\times B$ is distributed among individual miners, also known as workers. The expected payout for a worker with hashrate $h$ is 
+```math
+(1-f)\times\frac{htB}{2^{32}D}
+```
+# Shares
+In order to measure and quantify the work contributed by individual miners in a pool, the idea of shares is used. A share is a valid hash `double-SHA256(Block Header)` that is less than that of the difficulty set by the pool ($\text{pool}_{difficulty}$) . This difficulty is always less than that of the network's difficulty ($\text{Network}_{difficulty}$). This ensures that the principle of proof of work is maintained in pooled mining as no miner can find a hash < $\text{pool}_{\text{target}}$ without doing the actual work. The Pool verifies the hashes submitted by the miners to claim their share. 
+
+A basic overview of a mining pool's operation is illustrated below:
+
+![](images/miningpool.jpg)
+
+The $\text{pool}_{\text{difficulty}}$ , thereby the $\text{pool}_{\text{target}}$ that each miner has to satisfy, to earn a share, is set by the pool based on the miner's hash rate. It is a dynamically adjusted value. The faster a miner gets, the lower is the target assigned to him. However, always $\text{pool}_{\text{target}} > text{network}_{\text{target}}$ . 
+### Standardization of Shares
+The $\text{pool}_{\text{difficulty}}$ , for each contributing miner in the pool, is dynamically adjusted so as to optimize the communication between the pool and the miner. If the difficulty for the miner is too low relative to his hash rate, he will have to communicate frequently with the pool to submit his shares(i.e) hash < $\text{pool}_{\text{target}}$.
+In order to make the share claim by different miners invariant of the dynamically adjusted $\text{pool}_{\text{difficulty}}$ assigned to him, the pool converts the no.of shares at higher difficulties to their $\text{difficulty 1}$ equivalent. 
+```math
+\text{difficulty 1 equivalent shares} = \text{difficulty assigned to miner}\times \text{No.of shares submited}
+```
