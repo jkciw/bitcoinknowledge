@@ -36,7 +36,9 @@ In order to measure and quantify the work contributed by individual miners in a 
 
 A basic overview of a mining pool's operation is illustrated below:
 
+
 ![](images/miningpool.jpg)
+
 
 The $\text{pool}_{\text{difficulty}}$   thereby the $\text{pool}_{\text{target}}$ that each miner has to satisfy, to earn a share, is set by the pool based on the miner's hash rate. It is a dynamically adjusted value. The faster a miner gets, the lower is the target assigned to him. However, always $\text{pool}_{\text{target}} > text{network}_{\text{target}}$  . 
 ### Standardization of Shares
@@ -48,7 +50,7 @@ In order to make the share claim by different miners invariant of the dynamicall
 
 #### Example
 
-- Consider two miners 'A' and 'B' with the same hash rate
+Consider two miners 'A' and 'B' with the same hash rate
 
 | Miner A                                                                            | Miner B                                                                            |
 | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
@@ -64,6 +66,7 @@ As can be seen from the above example, though both the miners are entitled to th
 - Each hash of the miner has a probability of $\frac{1}{2^{32}}$ to become a share. 
 - Each share of a miner has a probability of $p=\frac{1}{D}$ to become a valid block. 
 - If the miner spends this effort, of finding a share($\text{pool}_{\text{difficulty}} < \text{network}_{\text{difficulty}}$), on his own (i.e) solo mining, the reward that he can expect, from the network, is $\frac{1}{D}\times B = pB$ . 
-- Instead, if the miner spends this effort in a pool, he will expect $p \times \text{pool}_{\text{reward}}$ , from the pool. 
-- A fair pool will pay the miner $(1-f) \times p \times \text{pool}_{\text{reward}}$ , accounting for a fixed percentage fee $f$ for the services rendered by the pool. 
+- Instead, if the miner spends this effort in a pool, he will expect $p \times \text{pool}_{\text{reward}}$ , for every share, from the pool. 
+- A fair pool will pay the miner $(1-f) \times p \times \text{pool}_{\text{reward}}$ , for every share, where $f$ is the fixed percentage fee that the pool charges for the services rendered.
+
 
