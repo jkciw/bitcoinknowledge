@@ -27,12 +27,12 @@ The above results, when plotted as below, underscore that the individual's hash 
 ![](images/variance_comp.png)
 
 The pool, maintained by an operator, typically charges a fixed percentage $f$ of the block reward $B$ for its services. Thus the pool operator receives $f\times B$ for his services. The remaining reward $(1-f)\times B$ is distributed among individual miners, also known as workers. The expected payout for a worker with hashrate $h$ is 
-```math
-(1-f)\times\frac{htB}{2^{32}D}
-```
+
+![](images/pooleq_5.png)
+
 # Shares
 
-In order to measure and quantify the work contributed by individual miners in a pool, the idea of shares is used. A share is a valid hash `double-SHA256(Block Header)` that is less than that of the difficulty set by the pool, $\text{pool}_{\text{difficulty}}$ . This difficulty is always less than that of the network's difficulty $\text{Network}_{\text{difficulty}}$. This ensures that the principle of proof of work is maintained in pooled mining as no miner can find a hash < $\text{pool}_{\text{target}}$ without doing the actual work. The Pool verifies the hashes submitted by the miners to claim their share. 
+In order to measure and quantify the work contributed by individual miners in a pool, the idea of shares is used. A share is a valid hash, double-SHA256(Block Header), that is less than that of the difficulty set by the pool, $\text{pool}_{\text{difficulty}}$ . This difficulty is always less than that of the network's difficulty $\text{Network}_{\text{difficulty}}$. This ensures that the principle of proof of work is maintained in pooled mining as no miner can find a $\text{hash} < \text{pool}_{\text{target}}$ without doing the actual work. The Pool verifies the hashes submitted by the miners to claim their share. 
 
 A basic overview of a mining pool's operation is illustrated below:
 
@@ -43,20 +43,27 @@ The $\text{pool}_{\text{difficulty}}$   thereby the $\text{pool}_{\text{target}}
 
 The $\text{pool}_{\text{difficulty}}$  for each contributing miner in the pool, is dynamically adjusted so as to optimize the communication between the pool and the miner. If the difficulty for the miner is too low relative to his hash rate, he will have to communicate frequently with the pool to submit his shares(i.e) hash < $\text{pool}_{\text{target}}$ .
 In order to make the share claim by different miners invariant of the dynamically adjusted $\text{pool}_{\text{difficulty}}$ assigned to him, the pool converts the no.of shares at higher difficulties to their $\text{difficulty 1}$ equivalent. 
-```math
-\text{difficulty 1 equivalent shares} = \text{difficulty assigned to miner}\times \text{No.of shares submited}
-```
+
+![](images/pooleq_6.png)
 
 #### Example
 
 - Consider two miners 'A' and 'B' with the same hash rate
 
-- Miner 'A' gets assigned $\text{pool}_{\text{difficulty}} = 1000000$  
-- The miner submits 1 share in a time period $t$ 
-- $\text{difficulty 1 equivalent shares}_{\text{Miner A}} = 1000000 \times 1 = 1000000 \text{shares}$
-
-- Miner 'B' gets assigned $\text{pool}_{\text{difficulty}} = 1$ 
-- The miner submits 1000000 share in a time period $t$
-- $\text{difficulty 1 equivalent shares}_{\text{Miner B}} = 1 \times 1000000 = 1000000 \text{shares}$
+| Miner A                                                                            | Miner B                                                                            |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| $\text{pool}_{\text{difficulty}} = 1000000$                                        | $\text{pool}_{\text{difficulty}} = 1$                                              |
+| time period = $t$                                                                  | time period $t$                                                                    |
+| No. of shares submitted in $t$ = 1                                                 | No. of shares submitted in $t$ = 1000000                                           |
+| $\text{difficulty 1 equivalent shares} = 1000000 \times 1 = 1000000 \text{shares}$ | $\text{difficulty 1 equivalent shares} = 1 \times 1000000 = 1000000 \text{shares}$ |
 
 As can be seen from the above example, though both the miners are entitled to the same number of ***equivalent shares***, as they have the same hash rate, Miner 'B' would have communicated 1000000 times more than Miner 'A' to claim his share in time period $t$. 
+
+### The Probabilities of shares
+
+- Each hash of the miner has a probability of $\frac{1}{2^{32}}$ to become a share. 
+- Each share of a miner has a probability of $p=\frac{1}{D}$ to become a valid block. 
+- If the miner spends this effort, of finding a share($\text{pool}_{\text{difficulty}} < \text{network}_{\text{difficulty}}$), on his own (i.e) solo mining, the reward that he can expect, from the network, is $\frac{1}{D}\times B = pB$ . 
+- Instead, if the miner spends this effort in a pool, he will expect $p \times \text{pool}_{\text{reward}}$ , from the pool. 
+- A fair pool will pay the miner $(1-f) \times p \times \text{pool}_{\text{reward}}$ , accounting for a fixed percentage fee $f$ for the services rendered by the pool. 
+
