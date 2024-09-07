@@ -40,7 +40,7 @@ A basic overview of a mining pool's operation is illustrated below:
 ![](images/miningpool.jpg)
 
 
-The $\text{pool}_{\text{difficulty}}$   thereby the $\text{pool}_{\text{target}}$ that each miner has to satisfy, to earn a share, is set by the pool based on the miner's hash rate. It is a dynamically adjusted value. The faster a miner gets, the lower is the target assigned to him. However, always $\text{pool}_{\text{target}} > text{network}_{\text{target}}$  . 
+The $\text{pool}_{\text{difficulty}}$   thereby the $\text{pool}_{\text{target}}$ that each miner has to satisfy, to earn a share, is set by the pool based on the miner's hash rate. It is a dynamically adjusted value. The faster a miner gets, the lower is the target assigned to him. However, always $\text{pool}_{\text{target}} > \text{network}_{\text{target}}$  . 
 ### Standardization of Shares
 
 The $\text{pool}_{\text{difficulty}}$  for each contributing miner in the pool, is dynamically adjusted so as to optimize the communication between the pool and the miner. If the difficulty for the miner is too low relative to his hash rate, he will have to communicate frequently with the pool to submit his shares(i.e) hash < $\text{pool}_{\text{target}}$ .
