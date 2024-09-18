@@ -14,10 +14,10 @@ $$
 - Once every 2016 blocks, the protocol assesses the block production time with respect to the target/difficulty. 
 - New Target is calculated as follows 
 
-$$Target_{new} = Target_{old}*\frac{20160}{timestamp_{block_{2015}}-{timestamp_{block_{0}}}}$$
+$$Target_{new} = Target_{old}*\frac{2016}{timestamp_{block_{2015}}-{timestamp_{block_{0}}}}$$
 - Difficulty is adjusted as follows[^1] 
 
-$$Difficulty_{new} = Difficulty_{old}*\frac{timestamp_{block_{2015}}-{timestamp_{block_{0}}}}{20160}$$
+$$Difficulty_{new} = Difficulty_{old}*\frac{timestamp_{block_{2015}}-{timestamp_{block_{0}}}}{2016}$$
 
 
 It is to be noted that only `Target` is re-calculated every 2016 blocks and shared between nodes via the `nBits` field in the block header. `Difficulty` exists to facilitate easier understanding of the `Target` value [^2]. 
