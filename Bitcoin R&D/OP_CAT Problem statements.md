@@ -1,3 +1,4 @@
+#### Probable problem statements for research with respect to OP_CAT
 1. Is the 520 bytes the right limit ? The memory weight of the entire stack should be computed before and after every operation and should be reasonably bounded[^1]
 2. Can covenants leverage linearity of Schnorr Signatures to avoid or discourage MEV ?, Use the idea of Adaptor signature that the miner isn't privy to [^2] 
 3. How to restrict revealing the contract details by the parties involved ? The lesser the details are revealed, the lesser the chances of miner taking advantage of them ?[^3] 

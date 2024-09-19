@@ -1,5 +1,6 @@
+#### What is OP_CAT ?
 An opcode to concatenate two stack elements in bitcoin script. 
-- BIP 420
+- BIP 420 defines the proposed OP_CAT
 - Given $[X_1, X_2]$, where $X_2$ is the top element of the stack, OP_CAT consumes the two elements and pushes $[X_1 \parallel X_2]$ 
 - The operation fails 
 	- if there are fewer than two stack elements on the stack
@@ -17,7 +18,7 @@ An opcode to concatenate two stack elements in bitcoin script.
 8. With a combination of OP_CAT, OP_CHECKSIGFROMSTACK and miniscript interesting covenants can be realized - Andrew Poelstra (2021)
 
 #### Apprehensions about OP_CAT
-- Is the 520 bytes the right limit ? The memory weight of the entire stack should be computed before and after every operation and should be reasonably bounded[^1]. 
-# References
-
-[^1]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-January/013434.html
+- Will pave way to realize general covenants, which itself can bring in unknown unknowns 
+- Will pave way to [MEV](Miner%20Extracted%20Value.md)  and thus centralization of mining
+- Will pave way to realize recursive covenants, which leads to reduced privacy and decentralization 
+- Will pave way to implement drivechains that can lead to complex and long contracts putting undue pressure on nodes. 
