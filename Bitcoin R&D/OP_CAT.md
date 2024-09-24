@@ -18,7 +18,7 @@ An opcode to concatenate two stack elements in bitcoin script.
 8. With a combination of OP_CAT, OP_CHECKSIGFROMSTACK and miniscript interesting covenants can be realized - Andrew Poelstra (2021)
 
 #### Apprehensions about OP_CAT
-- Will pave way to realize general covenants, which itself can bring in unknown unknowns 
+- Will pave way to realize general [covenants](Covenants.md), which itself can bring in unknown unknowns 
 - Will pave way to [MEV](Miner%20Extracted%20Value.md)  and thus centralization of mining
 - Will pave way to realize recursive covenants, which leads to reduced privacy and decentralization 
 - Will pave way to implement drivechains that can lead to complex and long contracts putting undue pressure on nodes. 
