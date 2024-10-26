@@ -9,7 +9,6 @@
 8. Measure the efficiency of OP_CAT validation and its on-chain cost[^9]
 9. What are the potential bugs that OP_CAT can introduce and how to prevent bugs ?[^9]
 10. A tool to quantify the burden on the node, measured in terms of 'validate-cpu-cycles-per-byte'[^10]
-11. 
 # References
 
 [^1]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-January/013434.html
