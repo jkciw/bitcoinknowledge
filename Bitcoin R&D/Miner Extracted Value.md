@@ -7,12 +7,14 @@
 - If contracts, in bitcoin scripts are complex enough, miners can analyze which contract executions are profitable for the miner and can order transactions such that the contract that gets executed first is the most profitable for the miner. 
 - MEV is front running some transactions based on mempool activity for profits. Profit could be achieved by order or include/exclude some transactions in block. 
 - Normally such opportunities are  found in complex smart contracts that allow trades being settled on-chain. 
+- However, Bitcoin is not immune to front running as the miners have complete authority to order transactions[^2]. 
 #### In what form MEVs can be realized in Bitcoin ?
 - Based Rollups[^1]
 - Inclusion of non-standard transactions[^1]
 - Collector coins (or) rate sats
 - By mining pools assembling a very competent team to analyze voluminous `spending conditions` published in the merkele trees of transactions and figuring out which one would be the most profitable to mine.
 - Automated Market Maker (AMMs), if realized using covenants, will create deposit and withdrawal transactions. Miners can front run such transactions. 
+- A bitcoin miner could *extract* value by delaying mining transactions that resolve lightning disputes[^2]. 
 #### Why MEV is difficult to realize in Bitcoin ?
 - Federated and Centralized rollups pose less MEV risk by design
 - As bitcoin core evolves, there will be very few transactions that will be non-standard and thus the out-of-band market for non-standard transactions will likely shrink.
@@ -33,3 +35,4 @@
 # References
 
 [^1]: https://bluematt.bitcoin.ninja/2024/04/16/stop-calling-it-mev/
+[^2]: https://bitcoin.stackexchange.com/questions/107787/front-running-in-bitcoin/107796#107796

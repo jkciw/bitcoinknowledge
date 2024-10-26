@@ -1,7 +1,7 @@
 Covenants are a special contract in property law whereby the use of the property is restricted for certain purposes. In bitcoin this translates to transactions enforcing restrictions (other than that of ownership) on the composition of subsequent transaction that depend on the parent transaction. The idea was introduced to bitcoin by Greg Maxwell in 2013. 
 
 The scope of operation of the existing script system of bitcoin limits its functionality by limiting the data that the script can access. At present the only data that the script can access are those provided through the input script(ScriptSig) and output program(ScriptPubKey). The process of an opcode analyzing part of the transaction that executes the opcode is called ***Transaction Introspection*** 
-At present the conditions on spending that can be enforced by bitcoin's script system are[^1]:
+At present the conditions on spending that can be enforced by bitcoin's script system target only the input side of a transaction. Once the conditions are satisfied, there are no conditions on how the spender can spend his coin[^4] The conditions that are enforced by the bitcoin script system are[^1]:
 1. Who can spend - by checking for the signature signed using the right private key (OP_CHECKSIG, OP_CHECKMULTISIG)
 2. Who + When can it be spent ? - by placing absolute and relative timelocks on transactions (OP_CHECKSIGVERIFY, OP_CHECKLOCKTIMEVERIFY)
 Other conditions that can be enforced but not possible in the present state:
@@ -39,3 +39,4 @@ Example: Writing a contract that enforces the condition that `prevout` and `next
 [^1]: O’Connor, R., Piekarska, M. (2017). Enhancing Bitcoin Transactions with Covenants. In: Brenner, M., _et al._ Financial Cryptography and Data Security. FC 2017. Lecture Notes in Computer Science(), vol 10323. Springer, Cham. https://doi.org/10.1007/978-3-319-70278-0_12
 [^2]: Möser, M., Eyal, I., Gün Sirer, E. (2016). Bitcoin Covenants. In: Clark, J., Meiklejohn, S., Ryan, P., Wallach, D., Brenner, M., Rohloff, K. (eds) Financial Cryptography and Data Security. FC 2016. Lecture Notes in Computer Science(), vol 9604. Springer, Berlin, Heidelberg. https://doi.org/10.1007/978-3-662-53357-4_9
 [^3]: https://bitcoinops.org/en/newsletters/2022/03/09/#introduction-of-turing-completeness
+[^4]: https://btctranscripts.com/bitcoin-review-podcast/covenants-introspection-ctv-and-activation-impasse
