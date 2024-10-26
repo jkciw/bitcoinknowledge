@@ -10,4 +10,3 @@ There are four types of SigHash in bitcoin that can be used, individual or in co
 - It is bitcoin's default SigHash type
 - It commits all components of a transaction to the signature
 - Thus no parts of the transaction can be changed once it is signed. 
-- 
