@@ -12,10 +12,10 @@ It is needed due to the increasingly complex script constructions and multi-face
 We propose a staged approach combining contract-level and program-level models to reason about a contract, covenant or script. 
 
 The proposed analysis framework can be visualized as shown below:
-![[script_analysis_new.jpg]]
+![](script_analysis_new.jpg)
 
 An illustration of contract-level modeling, specification and checking is shown below: 
-![[hybridframework.jpg]]
+![](hybridframework.jpg)
 
 After specifying the contract (or) covenant in formal language and the properties to check for, they are fed into a model checker. There are many model checkers available and have to be chosen appropriate to the covenant[^2]. The illustration above shows using maude, a frame work based on logic rewriting. The model checking process will examine all the possible execution paths of the contract and raise an error if it finds an execution path where 'B' is never able to withdraw `[] <> withdraw(B)`. 
 # References
